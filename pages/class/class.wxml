@@ -1,0 +1,7 @@
+<!-- 发布书本 -->
+<view class='box'>
+  <view class='wrapper'>
+    <view class="tab-content {{post_xcxshop ? 'select' : 'noSelect'}} " bindtap='choosePostBook'>小程序商城</view>
+    <view class="tab-content {{post_ebay ? 'select' : 'noSelect'}}" bindtap='choosePostThing'>易贝商城</view>
+  </view>
+</view>

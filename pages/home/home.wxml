@@ -1,0 +1,67 @@
+
+<!-- 搜索框 -->
+<view class='search' bindtap='bindSearch' >
+  <image src='/images/home/search.png'></image>
+</view>
+
+<!-- 首页的轮播图 -->
+<view class='index_top'>
+  <view class='swiper_box'>
+    <swiper class='swipers' autoplay="true" current="{{currentSwiper}}" bindchange="swiperChange">
+      <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+        <swiper-item>
+          <image class="slide-image" src="{{item}}" lazy-load="true" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+        <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 分类 -->
+<view class='fenlei'>
+    <view class='leibie dianzi'>
+      <image src='../../images/home_class/dianzi.png'></image>
+      <view>电子</view>
+    </view>
+
+    <view class='leibie fuzhuang'>
+      <image src='../../images/home_class/fuzhuang.png'></image>
+      <view>服装</view>
+    </view>
+
+    <view class='leibie riyong'>
+      <image src='../../images/home_class/riyong.png'></image>
+      <view>日用</view>
+    </view>
+
+    <view class='leibie food'>
+      <image src='../../images/home_class/food.png'></image>
+      <view>食品</view>
+    </view>
+<!--   
+<navigator url='../classify/welfare/welfare' class='navi navi-gongyi'>
+    <view class='leibie fenlei-gongyi'>
+      <image src='../../images/fenlei/gongyi.png'></image>
+      <view>食品</view>
+    </view>
+  </navigator>
+-->
+</view>
+<view class='tuijian-img'>
+  <text class='tuijian-cont'>今日推荐</text>
+</view>
+
+<view class='classfiy-view1'>
+<block wx:for="{{tuijian}}" wx:key="{{tuijian}}" >
+<view class='classfiy-view2'>
+<image class="classfiy-image" src="{{item.images}}" lazy-load="true"></image>
+<text class="classfiy-text">{{item.title}}</text>
+<text class="pricetext">¥{{item.price}}</text>
+</view>
+</block>
+</view>

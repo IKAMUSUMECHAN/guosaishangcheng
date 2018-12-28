@@ -1,0 +1,39 @@
+<view class="SearchBox">
+  <view class="Search_input_top_box">
+    <view class="Search_ico_box">
+      <icon type='search' size='20' class='search-icon'></icon>
+    </view>
+    <input class="Search_Input" focus="{{name_focus}}" placeholder='请输入商品、品牌名称进行搜索' bindinput='inputvalue' value="{{input_value}}"></input>
+    <!--清空搜索框按钮-->
+    <image bindtap='deleteinput' src='../../images/quxiao.png'class="deleteinput" view></image>
+    <view class="Search_btn" bindtap='search'>搜索</view>
+  </view>
+  <view class="Search_xian"></view>
+
+  <!--搜索记录盒子-->
+  <view class="Search_record_box">
+    <view class="Search_record_text">
+      <text>搜索记录</text>
+      <image bindtap='delete_list' src='../../images/laji1.png'></image>
+    </view>
+    <!--记录词的盒子-->
+    <view class="History_box">
+      <view class="History-list">
+        <text wx:for="{{listarr}}" data-text="{{item}}" wx:key="key" bindtap='this_value'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--热门搜索盒子-->
+  <view class="hot_box">
+    <view class="hot_box_text">
+      <text>热门搜索</text>
+    </view>
+    <!--热门词的盒子-->
+    <view class="History_box">
+      <view class="History-list">
+        <text wx:for="{{hostarr}}" data-text="{{item}}" wx:key="key" bindtap='this_value'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>
